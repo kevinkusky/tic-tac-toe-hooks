@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+button {cursor: pointer;}
+
+li {list-style: none;}
 
 .tile {
   background: lightblue;
@@ -35,7 +38,8 @@ code {
 .entire-game {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  transform: translate(0%, 80%);
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 50%);
 }
