@@ -28,15 +28,15 @@ const Game = () => {
     )
 
     return(
-        <>
+        <div className='entire-game'>
             <Board tiles={board} onClick={handleClick} />
-            <div>
+            <div className='board-controls'>
                 <p>
                     {winner ? 'Winner: ' + winner : 'Next Player: ' + (xNext ? 'X' : 'O')}
                 </p>
                 {clearBoard()}
             </div>
-        </>
+        </div>
     )
 }
 

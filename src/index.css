@@ -30,5 +30,12 @@ code {
   margin: 0 auto;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  transform: translate(0%, 100%);
+}
+
+.entire-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(0%, 80%);
 }
