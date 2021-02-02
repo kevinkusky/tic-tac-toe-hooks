@@ -26,7 +26,7 @@ const Game = () => {
 
     }
 
-    return(<Board onClick={handleClick} />)
+    return(<Board tiles={board} onClick={handleClick} />)
 }
 
 export default Game;

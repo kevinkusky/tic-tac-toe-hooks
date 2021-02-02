@@ -29,5 +29,6 @@ code {
   height: 250px;
   margin: 0 auto;
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr)
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  transform: translate(0%, 100%);
 }
