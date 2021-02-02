@@ -24,7 +24,12 @@ const Game = () => {
     }
 
     const clearBoard = () => (
-        <button onClick={() => setBoard(Array(9).fill(null))}>Start</button>
+        <button onClick={
+            () => {
+                setBoard(Array(9).fill(null));
+                setXNext(true);
+            }}
+        >New Game</button>
     )
 
     return(
