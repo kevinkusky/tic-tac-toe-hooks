@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, { useState } from 'react';
 
 import {calculateWinner} from '../helper';
@@ -22,11 +23,21 @@ const Game = () => {
 
     }
 
-    const renderMoves = () => {
+    const clearBoard = () => (
+        <button onClick={() => setBoard(Array(9).fill(null))}>Start</button>
+    )
 
-    }
-
-    return(<Board tiles={board} onClick={handleClick} />)
+    return(
+        <>
+            <Board tiles={board} onClick={handleClick} />
+            <div>
+                <p>
+                    {winner ? 'Winner: ' + winner : 'Next Player: ' + (xNext ? 'X' : 'O')}
+                </p>
+                {clearBoard()}
+            </div>
+        </>
+    )
 }
 
 export default Game;
