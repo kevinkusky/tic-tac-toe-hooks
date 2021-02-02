@@ -1,11 +1,12 @@
 import React from 'react';
-import Square from './Tile';
+import Tile from './Tile';
 
-const Board = ({ squares, onClick }) => (
-    <div>
-        <Square value='1' onClick={() => onClick('someValue')} />
+const Board = ({ tiles, onClick }) => (
+    <div className='board'>
+        {tiles.map((tile, i) => (
+            <Tile key={i} value={tile} onClick={() => onClick(i)} />
+        ))}
     </div>
-
 )
 
 export default Board;

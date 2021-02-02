@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import {calculateWinner} from '../helper';
 import Board from './Board'
 
 const Game = () => {
+    const [board, setBoard] = useState(Array(9).fill(null));
+    const [xNext, setXNext] = useState(true);
+    const winner = calculateWinner(board);
 
-    const handleClick = () => {
+    const handleClick = i => {
+        const boardInstance = [...board];
 
+        if (winner || boardInstance[i]) return;
+
+        boardInstance[i] = xNext ? 'X' : 'O'
+        setBoard(boardInstance);
+        setXNext(!xNext);
     }
 
     const revertTo = () => {
@@ -14,10 +25,8 @@ const Game = () => {
     const renderMoves = () => {
 
     }
-    
-    return(
-        <Board onClick={handleClick} />
-    )
+
+    return(<Board onClick={handleClick} />)
 }
 
 export default Game;
